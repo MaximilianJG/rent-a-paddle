@@ -1,12 +1,84 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #F2F2F2;
+  padding: 0;
+  margin: 0;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
+.navbar-menu h5 {
+  padding: 35px;
+  margin: 0px !important;
+  line-height: 0px !important;
+  color: black;
+  border-right: 1px solid #D5D5D5;
+}
+
+.navbar-menu:hover {
+    text-decoration: none;
+  }
+
+.center-items {
+  margin-top: 25px;
+}
+
+.items-logged-in {
+}
+
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.nav-item-login {
+  padding: 35px;
+  padding-right: 50px;
+  padding-left: 50px;
+  background-color: #00C8B6;
+}
+.nav-link-login {
+  padding: 0px;
+  margin: 0px;
+  color: white;
+  font-size: 18px;
+}
+.nav-item-login:hover {
+  text-decoration: none;
+}
+
+.nav-search-bar {
+  border-radius: 20px;
+  padding-right: 80px !important;
+  padding: 10px;
+  color: white;
+  background-color: #E6E6E6;
+  border: 2px solid #D5D5D5;
+  margin-top: 20px;
+}
+.nav-search-bar-border {
+  border-radius: 20px;
+}
+
+.nav-item-create-a-new-button {
+  padding: 35px;
+  padding-right: 50px;
+  padding-left: 50px;
+  background-color: #00C8B6;
+  margin: 0 !important;
+  border: 1px solid #00C8B6;
+}
+.nav-link-create-a-new-button {
+  padding: 0px;
+  margin: 0px;
+  color: white;
+  font-size: 15px;
+}
+.nav-item-create-a-new-button:hover {
+  text-decoration: none;
+}
+
+
+
+
