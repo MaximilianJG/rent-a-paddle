@@ -3,7 +3,7 @@ class BoatsController < ApplicationController
   before_action :set_boat, only: [:show, :edit, :update, :destroy]
 
   def index
-    @boats = Boat.all
+    @boats = policy_scope(Boat).all
   end
 
   def new
@@ -33,12 +33,12 @@ class BoatsController < ApplicationController
       redirect_to boat_path(@restaurant)
     else
       render :update
+    end
   end
 
   def destroy
     @boat.destroy
   end
-
 
 
   private
