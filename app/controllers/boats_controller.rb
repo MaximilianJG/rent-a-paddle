@@ -1,5 +1,6 @@
 class BoatsController < ApplicationController
 
+  before_action :set_boat, only: [:show, :edit, :update, :destroy]
 
   def index
     @boats = Boat.all
@@ -21,15 +22,34 @@ class BoatsController < ApplicationController
     end
   end
 
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @boat.update(boat_params)
+      redirect_to boat_path(@restaurant)
+    else
+      render :update
+  end
+
+  def destroy
+    @boat.destroy
+  end
 
 
 
+  private
 
+  def boat_params
+    params.require(:boat).permit(:name, :type, :price, :location, :description)
+  end
 
-end
+  def set_boat
+    @boat = Boat.find(params[:id])
+    authorize @boat
+  end
 
-private
-
-def boat_params
-  params.require(:boat).permit(:name, :type, :price, :location, :description)
 end
