@@ -5,10 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-max = User.create(username: "max")
+
+user = User.create!({
+    email: Faker::Internet.email,
+    password: Faker::Internet.password(min_length: 10, max_length: 20),
+    username: 123456
+  })
 
 10.times do
-  Boat.create(name: Faker::App.name, user: max)
+  boat = Boat.create!(name: Faker::App.name, location: "Berlin", description: "Shitty boat", price: 3, user_id: user.id)
+  puts "Created #{boat.name}!!!"
 end
-
-
