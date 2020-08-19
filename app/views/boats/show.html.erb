@@ -7,7 +7,7 @@
 <p> Description: <%= @boat.description %></p>
 <p> Location: <%= @boat.location %></p>
 
-<%= link_to 'Book here', boats_path  %>
+<%= link_to 'Book here', new_boat_booking_path(@boat)  %>
 <p>The above link will have to redicrect to the new_booking_path eventually</p>
 
 <%= link_to "Back to Offers", boats_path %>

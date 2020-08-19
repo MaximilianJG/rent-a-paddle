@@ -1,18 +1,24 @@
 class BookingsController < ApplicationController
 
   def index
-    @booking = Booking.where(booking.user == current_user)
+    @bookings_of_user = policy_scope(Boat).where(:user == current_user)
   end
 
-  # def new
-  # end
+  def new
+    @boat = Boat.find(params[:boat_id])
+    @booking = Booking.new
+    authorize @booking
+  end
 
   def create
+    @boat = Boat.find(params[:boat_id])
     @booking = Booking.new(strong_booking_params)
     @booking.user = current_user
+    @booking.boat = @boat
+    authorize @booking
 
     if @booking.save
-      redirect_to booking_path
+      redirect_to booking_path(@booking)
     else
       render.new
     end
@@ -21,7 +27,8 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @bookings = Booking.find(params[:id])
+    @booking = Booking.find(params[:id])
+    authorize @booking
 
   end
 
@@ -29,7 +36,7 @@ class BookingsController < ApplicationController
   end
 
   def strong_booking_params
-    params.require(:boat).permit(:id)
+    params.require(:booking).permit(:starting_date_time, :ending_date_time)
 
   end
 
