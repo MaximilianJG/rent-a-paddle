@@ -1,1 +1,12 @@
-<h1>Create a new boat!</h1>
+<h1>Create a new boat</h1>
+
+<div class="container">
+  <%= simple_form_for(@boat) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :type %>
+  <%= f.input :description %>
+  <%= f.input :location %>
+  <%= f.input :price %>
+  <%= f.submit %>
+  <% end %>
+</div>
