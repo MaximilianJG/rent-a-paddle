@@ -8,9 +8,22 @@
 
 user = User.create!({
     email: Faker::Internet.email,
-    password: Faker::Internet.password(min_length: 10, max_length: 20),
-    username: 123456
+    password: 123456, #Faker::Internet.password(min_length: 10, max_length: 20)
+    username: Faker::Internet.username,
   })
+
+user2 = User.create!({
+    email: Faker::Internet.email,
+    password: 123456, #Faker::Internet.password(min_length: 10, max_length: 20)
+    username: Faker::Internet.username,
+  })
+
+
+
+10.times do
+  boat = Boat.create!(name: Faker::App.name, location: "Berlin", description: "Shitty boat", price: 3, user_id: user.id)
+  puts "Created #{boat.name}!!!"
+end
 
 10.times do
   boat = Boat.create!(name: Faker::App.name, location: "Berlin", description: "Shitty boat", price: 3, user_id: user.id)
