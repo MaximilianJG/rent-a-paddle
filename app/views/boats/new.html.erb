@@ -1,12 +1,19 @@
 <h1>Create a new boat</h1>
 
 <div class="container">
-  <%= simple_form_for(@boat) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :type %>
-  <%= f.input :description %>
-  <%= f.input :location %>
-  <%= f.input :price %>
-  <%= f.submit %>
-  <% end %>
+  <div class="row justify-content-center">
+    <div class="col-sm-4">
+
+    <%= simple_form_for(@boat) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :type, collection: ["SUP", "Rowboat", "Dinghy", "Water skis", "Jetski", "Surfboard", "Kitesurfing", "Bananaboat"] %>
+    <%= f.input :description %>
+    <%= f.input :location %>
+    <%= f.input :price %>
+    <%= f.submit "Create boat", class: "btn btn-success" %>
+    <% end %>
+
+    <%= link_to "Back", boats_path %>
+    </div>
+  </div>
 </div>
