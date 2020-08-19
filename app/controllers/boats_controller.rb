@@ -15,11 +15,13 @@ class BoatsController < ApplicationController
     @boat = Boat.new(boat_params)
     @boat.user = current_user
     authorize @boat
+
     if @boat.save
       redirect_to boats_path
     else
       render :new
     end
+
   end
 
   def show

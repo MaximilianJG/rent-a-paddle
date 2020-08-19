@@ -1,7 +1,9 @@
+
+<!-- SUB NAV BAR -->
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon navbar-index">
   <ul class="sub-nav-list">
     <li class="sub-nav-list-item">
-      <p>FILTER BY <i class="fas fa-caret-down"></i> </p>
+      <p>FILTER BY </p>
     </li>
     <li class="sub-nav-list-item">
       <p>CATEGORY</p>
@@ -15,16 +17,27 @@
   </ul>
 </div>
 
+<div class="container mt-5">
 
-<div class="container mt-3">
-  <h1>All Boats</h1>
+<p class="text-right"> <%= @boats.count %> results for "QUERY" in "LOCATION"</p>
 
-  <ul>
+  <div class="row border-top-cards">
     <% @boats.each do |boat| %>
-    <li><%= link_to boat.name, boat_path(boat) %></li>
+    <div class="col-sm-4">
+      <div class="card-boat">
+  <img src="https://source.unsplash.com/random/kayak" />
+  <div class="card-boat-infos">
+    <div>
+      <h2><%= link_to boat.name, boat_path(boat) %></h2>
+      <p><%= boat.description %></p>
+    </div>
+    <h2 class="card-boat-pricing"><%= boat.price %> € / Day </h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-boat-user avatar-bordered" />
+  </div>
+</div>
+    </div>
     <% end %>
-  </ul>
-
+  </div>
 
 </div>
 
