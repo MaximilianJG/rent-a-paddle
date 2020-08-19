@@ -6,7 +6,7 @@
 
     <%= simple_form_for(@boat) do |f| %>
     <%= f.input :name %>
-    <%= f.input :type, collection: ["SUP", "Rowboat", "Dinghy", "Water skis", "Jetski", "Surfboard", "Kitesurfing", "Bananaboat"] %>
+    <%= f.input :category, collection: ["SUP", "Rowboat", "Dinghy", "Water skis", "Jetski", "Surfboard", "Kitesurfing", "Bananaboat"] %>
     <%= f.input :description %>
     <%= f.input :location %>
     <%= f.input :price, as: :currency %>
