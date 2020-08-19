@@ -9,7 +9,7 @@
     <%= f.input :type, collection: ["SUP", "Rowboat", "Dinghy", "Water skis", "Jetski", "Surfboard", "Kitesurfing", "Bananaboat"] %>
     <%= f.input :description %>
     <%= f.input :location %>
-    <%= f.input :price %>
+    <%= f.input :price, as: :currency %>
     <%= f.submit "Create boat", class: "btn btn-success" %>
     <% end %>
 
