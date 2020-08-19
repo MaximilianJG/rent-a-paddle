@@ -1,4 +1,14 @@
-<h1>Show boat</h1>
 
+<div class="container text-left">
 
-<%= @boat.name %>
+<h1 class="title"><%= @boat.name %></h1>
+
+<p> Price: <%= @boat.price %></p>
+<p> Description: <%= @boat.description %></p>
+<p> Location: <%= @boat.location %></p>
+
+<%= link_to 'Book here', boats_path  %>
+<p>The above link will have to redicrect to the new_booking_path eventually</p>
+
+<%= link_to "Back to Offers", boats_path %>
+</div>
