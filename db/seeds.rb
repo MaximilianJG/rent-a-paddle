@@ -8,8 +8,8 @@
 
 user = User.create!({
     email: Faker::Internet.email,
-    password: Faker::Internet.password(min_length: 10, max_length: 20),
-    username: 123456
+    password: 123456, #Faker::Internet.password(min_length: 10, max_length: 20)
+    username: Faker::Internet.username,
   })
 
 10.times do
