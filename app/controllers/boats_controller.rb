@@ -46,7 +46,7 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
-    params.require(:boat).permit(:name, :type, :price, :location, :description)
+    params.require(:boat).permit(:name, :category, :price, :location, :description)
   end
 
   def set_boat
