@@ -19,22 +19,24 @@
 
 <div class="container mt-5">
 
-<p class="text-right"> <%= @boats.count %> results for "QUERY" in "LOCATION"</p>
+  <p class="text-right"> <%= @boats.count %> results for "QUERY" in "LOCATION"</p>
 
   <div class="row border-top-cards">
     <% @boats.each do |boat| %>
     <div class="col-sm-4">
       <div class="card-boat">
-  <img src="https://source.unsplash.com/random/kayak" />
-  <div class="card-boat-infos">
-    <div>
-      <h2><%= link_to boat.name, boat_path(boat) %></h2>
-      <p><%= boat.description %></p>
-    </div>
-    <h2 class="card-boat-pricing"><%= boat.price %> € / Day </h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-boat-user avatar-bordered" />
-  </div>
-</div>
+        <%= link_to boat_path(boat) do %>
+        <img class="card-image" src="https://source.unsplash.com/random/kayak" />
+        <div class="card-boat-infos">
+          <div>
+            <h2><%= boat.name %></h2>
+            <p><%= boat.description %></p>
+          </div>
+          <h2 class="card-boat-pricing"><%= boat.price %> € / Day </h2>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-boat-user avatar-bordered" />
+        </div>
+        <% end %>
+      </div>
     </div>
     <% end %>
   </div>
