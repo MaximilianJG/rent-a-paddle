@@ -1,7 +1,19 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings_of_user = policy_scope(Boat).where(:user == current_user)
+    @bookings_of_user = policy_scope(Booking).where(:user == current_user)
+
+    @incomingbooking = []
+    @externalbookingrequest = []
+
+    @bookings_of_user.each do |booking|
+      if booking.boat.user == current_user
+        @incomingbooking << booking
+      else
+        @externalbookingrequest << booking
+      end
+
+    end
   end
 
   def new
