@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container-show">
   <div class="row">
-    <div class="col-lg-6">
+    <div class="col-lg-5">
       <div class="card-boat-show">
         <% if @boat.photos.attached? %>
           <% @boat.photos.each do |photo| %>
@@ -16,7 +16,7 @@
             <p><%= @boat.description %></p>
           </div>
           <div class="card-boat-price-avatar">
-            <h2><%= @boat.price %>€/day</h2>
+            <p><%= @boat.price %>€/day</p>
             <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-boat-user avatar-bordered" />
           </div>
         </div>
@@ -35,10 +35,10 @@
     <% end %>
   </div>
     </div>
-      <div class="col-lg-6">
+      <div class="col-lg-7">
         <div class="mt-5">
           <div id="map"
-             style="width: 100%; height: 900px;"
+             style="width: 100%; height: 880px;"
              data-markers="<%= @markers.to_json %>"
              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         </div>

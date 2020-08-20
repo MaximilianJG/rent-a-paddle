@@ -2,11 +2,11 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.8);
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .card-boat-show > img {
-  height: 500px;
+  height: 300px;
   width: 100%;
   object-fit: cover;
   margin-bottom: 50px;
@@ -14,14 +14,14 @@
 }
 
 .card-boat-show h2 {
-  font-size: 36px;
+  font-size: 25px;
   font-weight: bold;
   margin: 0;
 }
 
 
 .card-boat-show p {
-  font-size: 24px;
+  font-size: 15px;
   font-style: italic;
   opacity: .7;
   margin: 0;
@@ -47,5 +47,9 @@
 
 .booking-form {
   display: flex;
+}
+
+.container-show {
+  margin: 0 50px;
 }
 
