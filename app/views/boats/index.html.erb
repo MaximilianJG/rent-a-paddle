@@ -16,12 +16,14 @@
   </ul>
 </div>
 
-<div class="container mt-5">
-  <% if @boats.count > 1 %>
-    <p class="text-right"> <%= @boats.count %> results for "<%= params[:query] %>"</p>
-  <% else %>
-    <p class="text-right"> <%= @boats.count %> result for "<%= params[:query] %>"</p>
-  <% end %>
+  <div class="container mt-5">
+    <% if params[:query].present? %>
+      <% if @boats.count > 1 %>
+        <p class="text-right"> <%= @boats.count %> results for "<%= params[:query] %>"</p>
+      <% else %>
+        <p class="text-right"> <%= @boats.count %> result for "<%= params[:query] %>"</p>
+      <% end %>
+    <% end %>
 
 
   <div class="row border-top-cards">
