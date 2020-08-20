@@ -1,6 +1,6 @@
 
 <div class="container mt-5">
-<h1>Create a new boat</h1>
+<h1 class="mb-2">Create a new boat</h1>
   <div class="row justify-content-center">
     <div class="col-sm-4">
 
@@ -12,10 +12,8 @@
     <%= f.input :price, as: :currency %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 
-    <%= f.submit "Create boat", class: "btn btn-success" %>
+    <%= f.submit "Create boat", class: "btn btn-success mb-4" %>
     <% end %>
-
-    <%= link_to "Back", boats_path %>
     </div>
   </div>
 </div>
