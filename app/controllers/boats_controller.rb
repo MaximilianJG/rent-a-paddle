@@ -3,15 +3,23 @@ class BoatsController < ApplicationController
   before_action :set_boat, only: [:show, :edit, :update, :destroy]
 
   def index
-    @boats = policy_scope(Boat)
 
-    @boat_coordinates = Boat.geocoded # geocoded # returns boats with coordinates
-      @markers = @boat_coordinates.map do |boat|
-        {
-          lat: boat.latitude,
-          lng: boat.longitude,
-          infoWindow: render_to_string(partial: "info_window", locals: { boat: boat })
-        }
+    if params[:query].present?
+      @boats = policy_scope(Boat).where("location ILIKE ?", "%#{params[:query]}%")
+    else
+      @boats = policy_scope(Boat).all
+      # @boats = Boat.geocoded # geocoded # returns boats with coordinates
+    end
+
+    # @boats = policy_scope(Boat).all
+
+    @markers = @boats.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { boat: boat })
+      }
+
     end
   end
 
