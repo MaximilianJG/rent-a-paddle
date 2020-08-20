@@ -1,10 +1,10 @@
 
-<div class="card-size" style="width: 800px">
+<div class="">
   <div class="nav-search-bar-border">
     <%= form_tag boats_path, method: :get, class: 'nav-search-bar d-flex' do %>
       <%= text_field_tag :query,
         params[:query],
-        class: "form-control",
+        class: "form-control blend-in-search-to-nav-search",
         placeholder: "Find a boat by location"
       %>
       <%= submit_tag "Search", class: "btn-mint" %>
