@@ -10,12 +10,10 @@
 <div>
   <div class="container text-left mt-5">
     <p> Rating: ⭐⭐⭐, <%= @boat.location %> </p>
-    <img class="col-md-4" src="https://source.unsplash.com/random/kayak" alt="Kayak picture">
+      <%= cl_image_tag @boat.photo.key, height: 300, width: 400, crop: :fill %>
     <p class="mt-3"> Price: <%= @boat.price %>€</p>
     <p> Description: <%= @boat.description %></p>
     <%= link_to 'Book here', boats_path  %>
     <p>link should redirect to new_booking_path eventually</p>
   </div>
 </div>
-
-
