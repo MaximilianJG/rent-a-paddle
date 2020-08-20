@@ -18,7 +18,7 @@ user = User.create!({
 10.times do
   file = URI.open('https://i.ytimg.com/vi/nk8K1GF2fB0/maxresdefault.jpg')
   boat = Boat.new(name: Faker::App.name, location: Faker::Address.city, description: "Shitty boat", price: 3, user_id: user.id)
-  boat.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  boat.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   boat.save
   puts "Created #{boat.name}!!!"
 end

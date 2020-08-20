@@ -25,8 +25,8 @@
     <div class="col-sm-4">
       <div class="card-boat">
         <%= link_to boat_path(boat) do %>
-        <% if boat.photo.attached? %>
-          <%= cl_image_tag boat.photo.key, height: 300, width: 400, crop: :fill, class: "card-image" %>
+        <% if (boat.photos).attached? %>
+          <%= cl_image_tag boat.photos.first.key, height: 300, width: 400, crop: :fill, class: "card-image" %>
         <% else %>
           <%= cl_image_tag 'download-2_buhn0o', height: 300, width: 400, crop: :fill, class: "card-image" %>
         <% end %>

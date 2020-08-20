@@ -10,8 +10,10 @@
 <div>
   <div class="container text-left mt-5">
     <p> Rating: ⭐⭐⭐, <%= @boat.location %> </p>
-      <% if @boat.photo.attached? %>
-        <%= cl_image_tag @boat.photo.key, height: 300, width: 400, crop: :fill %>
+      <% if @boat.photos.attached? %>
+        <% @boat.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
       <% else %>
         <%= cl_image_tag 'download-2_buhn0o', height: 300, width: 400, crop: :fill, class: "card-image" %>
       <% end %>

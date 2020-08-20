@@ -10,7 +10,7 @@
     <%= f.input :description %>
     <%= f.input :location %>
     <%= f.input :price, as: :currency %>
-    <%= f.input :photo, as: :file, required: true %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 
     <%= f.submit "Create boat", class: "btn btn-success" %>
     <% end %>
