@@ -1,0 +1,13 @@
+<div class="card card-size">
+  <div class="nav-search-bar-border">
+    <!-- <input type="text" placeholder="Search.." class="nav-search-bar"> -->
+    <%= form_tag boats_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a boat"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

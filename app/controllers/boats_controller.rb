@@ -3,9 +3,15 @@ class BoatsController < ApplicationController
   before_action :set_boat, only: [:show, :edit, :update, :destroy]
 
   def index
-    @boats = policy_scope(Boat).all
+    if params[:query].present?
+      @boats = policy_scope(Boat).where(name: params[:query])
+    else
+      @boats = policy_scope(Boat).all
+      # @boats = Boat.geocoded # geocoded # returns boats with coordinates
+    end
 
-    @boats = Boat.geocoded # geocoded # returns boats with coordinates
+    # @boats = policy_scope(Boat).all
+
     @markers = @boats.map do |boat|
       {
         lat: boat.latitude,
@@ -13,7 +19,6 @@ class BoatsController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { boat: boat })
       }
     end
-
   end
 
   def new
