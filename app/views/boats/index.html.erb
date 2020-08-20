@@ -17,8 +17,12 @@
 </div>
 
 <div class="container mt-5">
+  <% if @boats.count > 1 %>
+    <p class="text-right"> <%= @boats.count %> results for "<%= params[:query] %>"</p>
+  <% else %>
+    <p class="text-right"> <%= @boats.count %> result for "<%= params[:query] %>"</p>
+  <% end %>
 
-  <p class="text-right"> <%= @boats.count %> results for "QUERY" in "LOCATION"</p>
 
   <div class="row border-top-cards">
     <% @boats.each do |boat| %>
