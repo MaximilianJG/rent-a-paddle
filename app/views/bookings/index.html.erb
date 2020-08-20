@@ -12,10 +12,10 @@
                 <h5>Current Status: <%= booking.status.capitalize %></h5>
                 <div class="row mt-3">
                   <div class="col-lg-6">
-                    <p class="btn btn-success">Accept</p>
+                    <%= button_to 'Accept', status_path(booking), method: :get, params: {status: 'accepted'}, class: "btn btn-success" %>
                   </div>
                   <div class="col-lg-6">
-                    <p class="btn btn-danger">Decline</p>
+                    <%= button_to 'Decline', status_path(booking), method: :get, params: {status: 'declined'}, class: "btn btn-danger" %>
                   </div>
                 </div>
               </div>
@@ -29,7 +29,7 @@
             <% @externalbookingrequest.each do |booking| %>
               <div class="row justify-content-center">
                 <div class="card-in-card-user text-center">
-                  <h4 class="date-of-booking"><strong>You</strong> want to book <%= booking.boat.name %></h4>
+                  <h4 class="date-of-booking"><strong>You</strong> want to book <%= booking.boat.name %> from <%= booking.boat.user.username %></h4>
                   <p><%= booking.starting_date_time.strftime("%d/%m/%Y %H:%M") %> - <%= booking.ending_date_time.strftime("%d/%m/%Y %H:%M") %></p>
                   <h5>Current Status: <%= booking.status.capitalize %></h5>
                 </div>
