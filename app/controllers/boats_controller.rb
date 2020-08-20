@@ -3,6 +3,7 @@ class BoatsController < ApplicationController
   before_action :set_boat, only: [:show, :edit, :update, :destroy]
 
   def index
+
     if params[:query].present?
       @boats = policy_scope(Boat).where("location ILIKE ?", "%#{params[:query]}%")
     else
@@ -18,6 +19,7 @@ class BoatsController < ApplicationController
         lng: boat.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { boat: boat })
       }
+
     end
   end
 
@@ -62,7 +64,7 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
-    params.require(:boat).permit(:name, :category, :price, :location, :description)
+    params.require(:boat).permit(:name, :category, :price, :location, :description, photos: [])
   end
 
   def set_boat
