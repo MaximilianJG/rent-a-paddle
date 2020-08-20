@@ -30,6 +30,11 @@
         <% else %>
           <%= cl_image_tag 'download-2_buhn0o', height: 300, width: 400, crop: :fill, class: "card-image" %>
         <% end %>
+
+        <li class="card-delete-boat"> <%= link_to boat_path(boat), method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="fas fa-trash-alt ml-2 white-trash"></i>
+        <% end %></li>
+
         <div class="card-boat-infos">
           <div>
             <h2><%= boat.name %></h2>

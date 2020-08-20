@@ -50,6 +50,7 @@ class BoatsController < ApplicationController
 
   def destroy
     @boat.destroy
+    redirect_to boats_path
   end
 
 
