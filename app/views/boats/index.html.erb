@@ -48,7 +48,7 @@
             <p><%= boat.description %></p>
           </div>
           <h2 class="card-boat-pricing"><%= boat.price %> € / Day </h2>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-boat-user avatar-bordered" />
+          <%= cl_image_tag("AvatarTest_azb3ed", class: "card-boat-user avatar-bordered") %>
         </div>
         <% end %>
       </div>
