@@ -33,10 +33,19 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
     authorize @booking
-
   end
 
   def edit
+  end
+
+  def set_status
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    if params[:status].present?
+      @booking.status = params[:status]
+      @booking.save!
+    end
+    redirect_to bookings_path
   end
 
   def strong_booking_params

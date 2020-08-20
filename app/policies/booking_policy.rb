@@ -28,4 +28,8 @@ class BookingPolicy < ApplicationPolicy
     def destroy?
       record.user == user || user.admin
     end
+
+    def set_status?
+      true
+    end
 end
