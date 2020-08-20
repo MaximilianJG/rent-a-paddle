@@ -4,6 +4,16 @@ class BoatsController < ApplicationController
 
   def index
     @boats = policy_scope(Boat).all
+
+    @boats = Boat.geocoded # geocoded # returns boats with coordinates
+    @markers = @boats.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { boat: boat })
+      }
+    end
+
   end
 
   def new
@@ -25,6 +35,7 @@ class BoatsController < ApplicationController
   end
 
   def show
+
   end
 
   def edit
@@ -53,5 +64,4 @@ class BoatsController < ApplicationController
     @boat = Boat.find(params[:id])
     authorize @boat
   end
-
 end
