@@ -43,6 +43,8 @@ class BoatsController < ApplicationController
 
   def show
 
+    # These lines are for the booking form
+    @booking = Booking.new
   end
 
   def edit
@@ -58,8 +60,8 @@ class BoatsController < ApplicationController
 
   def destroy
     @boat.destroy
+    redirect_to boats_path
   end
-
 
   private
 

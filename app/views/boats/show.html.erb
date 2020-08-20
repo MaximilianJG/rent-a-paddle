@@ -4,7 +4,6 @@
   <%= link_to "Back to Offers", boats_path %>
 </div>
 
-<%= link_to 'Book here', new_boat_booking_path(@boat)  %>
 <p>The above link will have to redicrect to the new_booking_path eventually</p>
 
 <div>
@@ -23,3 +22,5 @@
     <p>link should redirect to new_booking_path eventually</p>
   </div>
 </div>
+
+<%= render 'bookings/new' %>
