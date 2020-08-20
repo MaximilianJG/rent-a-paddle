@@ -1,64 +1,57 @@
-<!--
-<div class="title-show mt-5 ml-5">
-  <h1 class="title"><%= @boat.name %></h1>
-  <%= link_to "Back to Offers", boats_path %>
-</div>
-
-<p>The above link will have to redicrect to the new_booking_path eventually</p>
-
-<div>
-  <div class="container text-left mt-5">
-    <p> Rating: ⭐⭐⭐, <%= @boat.location %> </p>
-      <% if @boat.photos.attached? %>
-        <% @boat.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card-boat-show">
+        <% if @boat.photos.attached? %>
+          <% @boat.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
         <% end %>
-      <% else %>
-        <%= cl_image_tag 'download-2_buhn0o', height: 300, width: 400, crop: :fill, class: "card-image" %>
-      <% end %>
-    <p class="mt-3"> Price: <%= @boat.price %>€</p>
-    <p> Description: <%= @boat.description %></p>
-    <%= link_to 'Book here', boats_path  %>
-    <p>link should redirect to new_booking_path eventually</p>
-  </div>
-</div>
+        <% else %>
+          <%= cl_image_tag 'download-2_buhn0o', height: 300, width: 400, crop: :fill, class: "card-image" %>
+        <% end %>
 
-<%= render 'bookings/new' %> -->
-
-<div class="container show-container">
-  <div class="card-boat-show">
-    <% if @boat.photos.attached? %>
-      <% @boat.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-    <% else %>
-      <%= cl_image_tag 'download-2_buhn0o', height: 300, width: 400, crop: :fill, class: "card-image" %>
-    <% end %>
-
-    <div class="card-boat-infos-show">
-      <div class="card-boat-name-description">
-        <h2><%= @boat.name %></h2>
-        <p><%= @boat.description %></p>
+        <div class="card-boat-infos-show">
+          <div class="card-boat-name-description">
+            <h2><%= @boat.name %></h2>
+            <p><%= @boat.description %></p>
+          </div>
+          <div class="card-boat-price-avatar">
+            <h2><%= @boat.price %>€/day</h2>
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-boat-user avatar-bordered" />
+          </div>
+        </div>
       </div>
-      <div class="card-boat-price-avatar">
-        <h2><%= @boat.price %>€/day</h2>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-boat-user avatar-bordered" />
-      </div>
+        <div class="container mt-5 mb-5 booking-form">
+    <%= simple_form_for [@boat, @booking] do |f|%>
+    <div>
+      <%= f.input :starting_date_time %>
     </div>
+    <div>
+      <%= f.input :ending_date_time %>
+    </div>
+    <div>
+      <%= f.submit "Book now", class: "btn-mint" %>
+    </div>
+    <% end %>
   </div>
-  <div class="container mt-5 mb-5 booking-form">
-      <%= simple_form_for [@boat, @booking] do |f|%>
-      <div>
-        <%= f.input :starting_date_time %>
+    </div>
+      <div class="col-lg-6">
+        <div class="mt-5">
+          <div id="map"
+             style="width: 100%; height: 900px;"
+             data-markers="<%= @markers.to_json %>"
+             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+        </div>
       </div>
-      <div>
-        <%= f.input :ending_date_time %>
-      </div>
-      <div>
-        <%= f.submit "Book now", class: "btn-mint" %>
-      </div>
-      <% end %>
   </div>
 
+
+
+
+
+
+
 </div>
+
+
 

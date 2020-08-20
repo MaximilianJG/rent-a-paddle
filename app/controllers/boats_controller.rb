@@ -13,14 +13,14 @@ class BoatsController < ApplicationController
 
     # @boats = policy_scope(Boat).all
 
-    @markers = @boats.map do |boat|
-      {
-        lat: boat.latitude,
-        lng: boat.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { boat: boat })
-      }
+    # @markers = @boats.map do |boat|
+    #   {
+    #     lat: boat.latitude,
+    #     lng: boat.longitude,
+    #     infoWindow: render_to_string(partial: "info_window", locals: { boat: boat })
+    #   }
 
-    end
+    # end
   end
 
   def new
@@ -45,7 +45,18 @@ class BoatsController < ApplicationController
 
     # These lines are for the booking form
     @booking = Booking.new
-  end
+    @boats = []
+    @boats << @boat
+    @markers = @boats.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { boat: boat })
+      }
+
+    end
+    end
+
 
   def edit
   end
