@@ -16,12 +16,6 @@ class BookingsController < ApplicationController
     end
   end
 
-  def new
-    @boat = Boat.find(params[:boat_id])
-    @booking = Booking.new
-    authorize @booking
-  end
-
   def create
     @boat = Boat.find(params[:boat_id])
     @booking = Booking.new(strong_booking_params)
@@ -32,10 +26,8 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to booking_path(@booking)
     else
-      render :new
+      render 'boats/show'
     end
-
-
   end
 
   def show

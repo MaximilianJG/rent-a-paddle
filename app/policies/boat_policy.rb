@@ -22,10 +22,10 @@ class BoatPolicy < ApplicationPolicy
 
     # 'def edit?' is in application_policy.rb
     def update?
-      record.user == user || user.admin
+      record.user == user # || user.admin
     end
 
     def destroy?
-      record.user == user || user.admin
+      update?
     end
 end
