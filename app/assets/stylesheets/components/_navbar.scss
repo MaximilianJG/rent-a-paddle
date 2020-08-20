@@ -53,17 +53,17 @@
   border-radius: 45px;
   padding-right: 25px !important;
   padding: 10px;
-  color: white;
+  color: #E6E6E6;
   background-color: #E6E6E6;
   border: 2px solid #D5D5D5;
   padding-left: 26px;
+  margin-left: 15px;
 }
 .nav-search-bar-border {
   border-radius: 30px;
-  width: 600px;
+  width: 400px;
   position: absolute;
-  left: -118px;
-  top: -6px;
+  top: 15px;
 }
 
 .nav-item-create-a-new-button {
@@ -82,15 +82,6 @@
 }
 .nav-item-create-a-new-button:hover {
   text-decoration: none;
-}
-
-.card-size {
-  height: 90.5px;
-  background-color: #F2F2F2;
-  border-left: 0;
-  border-top: 0;
-  border-bottom: 0;
-  border-right: 1 solid black;
 }
 
 .avatar-name-text {
@@ -133,6 +124,16 @@
   text-decoration: none;
   transform: scale(1.05) perspective(1px);
   transition: 0.4s;
+  }
+
+  .blend-in-search-to-nav-search {
+  background-color: #E6E6E6;
+  border: none;
+  }
+
+  .blend-in-search-to-nav-search:focus {
+    box-shadow: none;
+    background-color: #E6E6E6;
   }
 
 
