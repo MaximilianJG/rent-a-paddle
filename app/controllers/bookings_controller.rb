@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
     authorize @booking
 
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to bookings_path(@booking)
     else
       render 'boats/show'
     end

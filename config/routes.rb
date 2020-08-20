@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create]
   end
 
-  resources :bookings, only: [:show, :index]
+  resources :bookings, only: [:index]
 
   get 'set_status/:id', to: 'bookings#set_status', as: 'status'
 
