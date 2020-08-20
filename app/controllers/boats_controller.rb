@@ -4,7 +4,7 @@ class BoatsController < ApplicationController
 
   def index
     if params[:query].present?
-      @boats = policy_scope(Boat).where(location: params[:query])
+      @boats = policy_scope(Boat).where("location ILIKE ?", "%#{params[:query]}%")
     else
       @boats = policy_scope(Boat).all
       # @boats = Boat.geocoded # geocoded # returns boats with coordinates
