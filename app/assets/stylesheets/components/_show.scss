@@ -1,1 +1,56 @@
+.card-boat-show {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.8);
+  width: 50%;
+  margin-top: 50px;
 
+}
+
+.card-boat-show > img {
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 50px;
+
+}
+
+.card-boat-show h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+.card-boat-show p {
+  font-size: 24px;
+  font-style: italic;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-boat-show .card-boat-infos-show {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  margin-left: 8px;
+  margin-top: -50px;
+}
+
+.card-boat-infos-show .card-boat-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+.booking-form {
+  display: flex;
+}
+
+.show-container {
+  margin-left: 50px;
+}
