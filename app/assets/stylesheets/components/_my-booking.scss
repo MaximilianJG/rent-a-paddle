@@ -25,3 +25,29 @@
 .date-of-booking {
   margin: 0
 }
+
+.accepted-banner {
+  border: 2px solid #1EDD87;
+  padding: 5px;
+  background-color: #1EDD87;
+  border-radius: 9px;
+  color: white;
+}
+
+.declined-banner {
+  border: 2px solid #FD1015;
+  padding: 5px;
+  background-color: #FD1015;
+  border-radius: 9px;
+  color: white;
+}
+
+.pending-banner {
+  border: 2px solid #FFC009;
+  padding: 5px;
+  background-color: #FFC009;
+  border-radius: 9px;
+  color: white;
+}
+
+
