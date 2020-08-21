@@ -4,7 +4,6 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 50px;
   height: 450px;
-  height: 450px;
   display: flex;
   flex-direction: column;
 }
@@ -36,6 +35,7 @@
   align-items: flex-end;
   position: relative;
   flex-direction: column;
+  flex-grow: 1;
 }
 
 .card-boat-infos .card-boat-user {
@@ -43,7 +43,6 @@
   right: 16px;
   top: -20px;
   width: 40px;
-  flex-grow: 1;
 }
 
 .border-top-cards {
