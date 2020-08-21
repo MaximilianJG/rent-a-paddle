@@ -14,7 +14,7 @@
         <%= render "shared/search_bar" %>
       <% end %>
 
-      <% if params[:controller] == "boats" && (params[:action] == "show" || "new") %> <!--- so was geht?? --->
+      <% if (params[:controller] == "boats" && (params[:action] == "show" || "new")) || (params[:controller] == "bookings" && params[:action] == "index") %> <!--- so was geht?? --->
           <%= render "shared/back-to-boats" %>
       <% end %>
   </div>
