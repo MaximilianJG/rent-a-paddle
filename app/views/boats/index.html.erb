@@ -43,12 +43,14 @@
         <% end %>
 
         <div class="card-boat-infos">
-          <div>
+          <div class="text-card-boat-infos">
             <h2><%= boat.name %></h2>
             <p><%= boat.description %></p>
           </div>
-          <h2 class="card-boat-pricing"><%= boat.price %> € / Day </h2>
-          <%= cl_image_tag("AvatarTest_azb3ed", class: "card-boat-user avatar-bordered") %>
+          <div class="flex-end-yes">
+            <h2 class="card-boat-pricing"><%= boat.price %> € / Day </h2>
+            <%= cl_image_tag("AvatarTest_azb3ed", class: "card-boat-user avatar-bordered") %>
+          </div>
         </div>
         <% end %>
       </div>
