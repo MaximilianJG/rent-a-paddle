@@ -21,6 +21,7 @@
   font-size: 12px;
   opacity: .7;
   margin: 0;
+  word-break: break-all;
 }
 
 .card-boat .card-boat-infos {
@@ -28,7 +29,7 @@
   display: flex;
   justify-content: space-between;
   position: relative;
-  height: 600px;
+  height: 120px;
 }
 
 .card-boat-infos .card-boat-user {
