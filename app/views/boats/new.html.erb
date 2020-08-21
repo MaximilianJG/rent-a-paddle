@@ -1,19 +1,20 @@
+  <div class="container mt-5" >
 
-<div class="container mt-5">
-<h1 class="mb-2">Create a new boat</h1>
-  <div class="row justify-content-center">
-    <div class="col-sm-4">
+  <h1 class="mb-2">Create a new boat</h1>
+    <div class="row justify-content-center">
+      <div class="col-sm-4">
 
-    <%= simple_form_for(@boat) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :category, collection: ["SUP", "Rowboat", "Dinghy", "Water skis", "Jetski", "Surfboard", "Kitesurfing", "Bananaboat"] %>
-    <%= f.input :description %>
-    <%= f.input :location %>
-    <%= f.input :price, as: :currency %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <%= simple_form_for(@boat) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :category, collection: ["SUP", "Rowboat", "Dinghy", "Water skis", "Jetski", "Surfboard", "Kitesurfing", "Bananaboat"] %>
+      <%= f.input :description %>
+      <%= f.input :location %>
+      <%= f.input :price, as: :currency %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 
-    <%= f.submit "Create boat", class: "btn btn-success mb-4" %>
-    <% end %>
+      <%= f.submit "Create boat", class: "btn btn-success mb-4" %>
+      <% end %>
+      </div>
     </div>
   </div>
 </div>
